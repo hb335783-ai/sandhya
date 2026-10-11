@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Tracker - Track Location by Phone Number</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Phone Tracker</h1>
+            <p class="subtitle">Track phone number location in real-time</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="phoneInput" 
+                        placeholder="Enter phone number (e.g., +1234567890 or 98XXXXXXXX)" 
+                        class="phone-input"
+                    >
+                    <button onclick="trackPhone()" class="track-btn">
+                        <span>Track Location</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+
+                <div class="info-panel">
+                    <div class="info-header">
+                        <h2>Phone Information</h2>
+                        <div id="loading" class="loading hidden">
+                            <div class="spinner"></div> Searching...
+                        </div>
+                    </div>
+
+                    <div id="infoContent" class="info-content hidden">
+                        <div class="info-item">
+                            <span class="label">Phone Number:</span>
+                            <span id="infoPhone" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Country:</span>
+                            <span id="infoCountry" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Carrier:</span>
+                            <span id="infoCarrier" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Type:</span>
+                            <span id="infoType" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Location:</span>
+                            <span id="infoLocation" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Latitude:</span>
+                            <span id="infoLat" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Longitude:</span>
+                            <span id="infoLng" class="value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Timezone:</span>
+                            <span id="infoTimezone" class="value">-</span>
+                        </div>
+                    </div>
+
+                    <div id="errorContent" class="error-content hidden">
+                        <p id="errorMessage"></p>
+                    </div>
+
+                    <div id="emptyState" class="empty-state">
+                        <p>🔍 Enter a phone number to track its location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Phone Tracker. Made with ❤️ for location intelligence.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
