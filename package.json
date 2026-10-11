@@ -1,0 +1,48 @@
+{
+  "name": "sandhya-location-tracker",
+  "displayName": "Sandhya - Location Tracker",
+  "description": "Real-time current location tracker with phone number lookup for VS Code",
+  "version": "1.0.0",
+  "publisher": "hb335783-ai",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Utilities",
+    "Other"
+  ],
+  "keywords": [
+    "location",
+    "tracker",
+    "geolocation",
+    "phone",
+    "map"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sandhya.openTracker",
+        "title": "Open Location Tracker",
+        "category": "Sandhya"
+      },
+      {
+        "command": "sandhya.getCurrentLocation",
+        "title": "Get Current Location",
+        "category": "Sandhya"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sandhya.openTracker"
+        },
+        {
+          "command": "sandhya.getCurrentLocation"
+        }
+      ]
+    }
+  },
+  "icon": "images/icon.png",
+  "license": "MIT"
+}
